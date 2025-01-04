@@ -12,6 +12,7 @@ class MainTableViewCell: UITableViewCell {
 
     
     @IBOutlet var titleLabel: UILabel!
+  
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var grade: CosmosView!
     @IBOutlet var likeButton: UIButton!
