@@ -6,18 +6,17 @@
 //
 
 import UIKit
+import Cosmos
 
 class MainTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var grade: CosmosView!
+    @IBOutlet var likeButton: UIButton!
+ 
+    @IBOutlet var travelImage: UIImageView!
+    
+    
 }
