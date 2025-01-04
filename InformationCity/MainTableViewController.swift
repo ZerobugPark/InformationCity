@@ -12,17 +12,16 @@ import Kingfisher
 class MainTableViewController: UITableViewController {
 
 
-    var travelInfo = TravelInfo()
+    var travelInfo = TravelInfo().travel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
  
     }
 
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        travelInfo.travel.count
+        travelInfo.count
     }
     
     
@@ -30,7 +29,7 @@ class MainTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewController") as! MainTableViewCell
         
-        let row = travelInfo.travel[indexPath.row]
+        let row = travelInfo[indexPath.row]
         
         if row.ad {
             let cell = tableView.dequeueReusableCell(withIdentifier: "adView") as! AdTableViewCell
@@ -42,12 +41,12 @@ class MainTableViewController: UITableViewController {
             
             cell.adLabel.text = "AD"
             
-            cell.adLabel.layer.cornerRadius = 10
+            cell.adLabel.layer.cornerRadius = 5
             cell.adLabel.backgroundColor = .white
             cell.adLabel.textAlignment = .center
             cell.adLabel.clipsToBounds = true
             cell.adLabel.font = .systemFont(ofSize: 10)
-            tableView.rowHeight = 80
+
             
             let colors: [UIColor] = [#colorLiteral(red: 1, green: 0.853197217, blue: 0.8475526571, alpha: 1), #colorLiteral(red: 0.8539611101, green: 1, blue: 0.8462869525, alpha: 1)]
             cell.bgView.backgroundColor = colors.randomElement()
@@ -57,7 +56,7 @@ class MainTableViewController: UITableViewController {
             
             return cell
         }
-        
+        print(tableView.rowHeight)
         cell.titleLabel.text = row.title
         cell.titleLabel.font = .boldSystemFont(ofSize: 16)
         
@@ -93,14 +92,36 @@ class MainTableViewController: UITableViewController {
         }
         
         cell.likeButton.tintColor = .white
-        
         cell.likeButton.tag = indexPath.row
+        cell.likeButton.addTarget(self, action: #selector(likeBtnTapped), for: .touchUpInside)
         
-        tableView.rowHeight = 160
+        if let like = row.like {
+            let image = like ? "heart" : "heart.fill"
+            cell.likeButton.setImage(UIImage(systemName: image), for: .normal)
+        }
+        
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if travelInfo[indexPath.row].ad {
+            return 80
+        } else {
+            return 160
+        }
+    }
+    
+    @objc private func likeBtnTapped(_ sender: UIButton) {
+        print(sender.tag)
+        if travelInfo[sender.tag].like != nil {
+            travelInfo[sender.tag].like?.toggle()
+            tableView.reloadData()
 
+        }
+
+        
+    }
  
 }
