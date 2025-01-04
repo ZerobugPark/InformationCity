@@ -14,7 +14,7 @@ struct Travel {
     var grade: Double?
     var save: Int?
     var like: Bool?
-    var ad: Bool?
+    var ad: Bool
 }
 
 
