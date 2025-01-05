@@ -11,12 +11,19 @@ import Kingfisher
 
 class MainTableViewController: UITableViewController {
 
-
+    @IBOutlet var mainTitle: UILabel!
+    
     var travelInfo = TravelInfo().travel
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
  
+        
+        mainTitle.text = "도시 상세 정보"
+        mainTitle.textAlignment = .center
+        mainTitle.font = .boldSystemFont(ofSize: 16)
     }
 
     
@@ -56,7 +63,6 @@ class MainTableViewController: UITableViewController {
             
             return cell
         }
-        print(tableView.rowHeight)
         cell.titleLabel.text = row.title
         cell.titleLabel.font = .boldSystemFont(ofSize: 16)
         
@@ -74,8 +80,9 @@ class MainTableViewController: UITableViewController {
             }
             // 터치 시 평점 변경 불가 (평점 입력 없이 별만 표시할 경우 사용)
             cell.grade.settings.updateOnTouch = false
+            
             // 별 채우기 모드
-            // full(완전히), half(반 씩), precise(클릭한 곳까지; 소수점 둘 째 자리까지 컨트롤)
+            // full(완전히), half(반 씩), precise(클릭한 곳까지 소수점 둘 째 자리까지)
             cell.grade.settings.fillMode = .precise
             
             // 별 크기
@@ -114,10 +121,10 @@ class MainTableViewController: UITableViewController {
     }
     
     @objc private func likeBtnTapped(_ sender: UIButton) {
-        print(sender.tag)
         if travelInfo[sender.tag].like != nil {
             travelInfo[sender.tag].like?.toggle()
-            tableView.reloadData()
+            tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+            //tableView.reloadData()
 
         }
 

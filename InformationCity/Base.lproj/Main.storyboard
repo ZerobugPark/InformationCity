@@ -19,15 +19,32 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="도시 상세 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgT-4D-pAR">
-                                    <rect key="frame" x="159" y="26" width="97" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도시 상세 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgT-4D-pAR">
+                                    <rect key="frame" x="148" y="11.666666666666668" width="97" height="48.666666666666657"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="ZgT-4D-pAR" secondAttribute="height" multiplier="2:1" id="Ccq-qq-xz3"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o2B-Gg-22u">
+                                    <rect key="frame" x="0.0" y="69.333333333333329" width="393" height="2.6666666666666714"/>
+                                    <color key="backgroundColor" red="0.9112530351" green="0.9112530351" blue="0.9112530351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="o2B-Gg-22u" secondAttribute="height" multiplier="150:1" id="FGA-1i-aXq"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="o2B-Gg-22u" firstAttribute="leading" secondItem="RaQ-tl-5kG" secondAttribute="leading" id="1pl-RN-0pC"/>
+                                <constraint firstAttribute="trailing" secondItem="o2B-Gg-22u" secondAttribute="trailing" id="GTx-NR-hvO"/>
+                                <constraint firstItem="ZgT-4D-pAR" firstAttribute="centerX" secondItem="RaQ-tl-5kG" secondAttribute="centerX" id="HyG-ua-p1X"/>
+                                <constraint firstItem="o2B-Gg-22u" firstAttribute="centerX" secondItem="RaQ-tl-5kG" secondAttribute="centerX" id="RRn-Mk-5SU"/>
+                                <constraint firstAttribute="bottom" secondItem="o2B-Gg-22u" secondAttribute="bottom" id="ahh-Ep-0EF"/>
+                                <constraint firstItem="ZgT-4D-pAR" firstAttribute="centerY" secondItem="RaQ-tl-5kG" secondAttribute="centerY" id="fXg-DH-v2B"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainTableViewController" rowHeight="160" id="Zfm-Ho-B3j" customClass="MainTableViewCell" customModule="InformationCity" customModuleProvider="target">
@@ -154,10 +171,13 @@
                             <outlet property="delegate" destination="J47-HT-twT" id="9RQ-b6-xmz"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="mainTitle" destination="ZgT-4D-pAR" id="KKt-R5-toH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNI-bP-bgj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-259" y="-94"/>
+            <point key="canvasLocation" x="-260.30534351145036" y="-94.366197183098592"/>
         </scene>
     </scenes>
     <resources>
