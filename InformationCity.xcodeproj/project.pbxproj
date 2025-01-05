@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D09FBE772D28D2FE00967EF8 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = D09FBE762D28D2FE00967EF8 /* Cosmos */; };
+		D09FBE7A2D28D30C00967EF8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D09FBE792D28D30C00967EF8 /* Kingfisher */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		D09FBE552D28CE1700967EF8 /* InformationCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InformationCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D09FBE7A2D28D30C00967EF8 /* Kingfisher in Frameworks */,
+				D09FBE772D28D2FE00967EF8 /* Cosmos in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 			);
 			name = InformationCity;
 			packageProductDependencies = (
+				D09FBE762D28D2FE00967EF8 /* Cosmos */,
+				D09FBE792D28D30C00967EF8 /* Kingfisher */,
 			);
 			productName = InformationCity;
 			productReference = D09FBE552D28CE1700967EF8 /* InformationCity.app */;
@@ -107,6 +116,10 @@
 			);
 			mainGroup = D09FBE4C2D28CE1700967EF8;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D09FBE752D28D2FE00967EF8 /* XCRemoteSwiftPackageReference "Cosmos" */,
+				D09FBE782D28D30B00967EF8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D09FBE562D28CE1700967EF8 /* Products */;
 			projectDirPath = "";
@@ -341,6 +354,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D09FBE752D28D2FE00967EF8 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 25.0.1;
+			};
+		};
+		D09FBE782D28D30B00967EF8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D09FBE762D28D2FE00967EF8 /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D09FBE752D28D2FE00967EF8 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
+		};
+		D09FBE792D28D30C00967EF8 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D09FBE782D28D30B00967EF8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D09FBE4D2D28CE1700967EF8 /* Project object */;
 }
