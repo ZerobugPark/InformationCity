@@ -107,13 +107,13 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="OcZ-ZH-0As" id="f4A-hy-Lys"/>
-                                    <outlet property="grade" destination="HBn-7a-XlJ" id="Goi-kt-zIu"/>
                                     <outlet property="likeButton" destination="V91-Ti-2KY" id="NIA-ao-KFk"/>
+                                    <outlet property="starGrade" destination="HBn-7a-XlJ" id="Goi-kt-zIu"/>
                                     <outlet property="titleLabel" destination="39X-kB-04b" id="ftt-c0-DwO"/>
                                     <outlet property="travelImage" destination="Pjb-hj-JnU" id="d6E-9x-ohF"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="adView" rowHeight="100" id="BRg-eP-mVf" customClass="AdTableViewCell" customModule="InformationCity" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdTableViewCell" rowHeight="100" id="BRg-eP-mVf" customClass="AdTableViewCell" customModule="InformationCity" customModuleProvider="target">
                                 <rect key="frame" x="20" y="287.33333206176758" width="353" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BRg-eP-mVf" id="hdR-v2-tHZ">
