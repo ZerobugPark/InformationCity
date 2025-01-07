@@ -64,6 +64,16 @@ class MainTableViewController: UITableViewController {
         }
     }
     
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let sb = UIStoryboard(name:"Main", bundle: nil)
+        
+        let vc = sb.instantiateViewController(withIdentifier: "DetailedInfoViewController") as! DetailedInfoViewController
+        
+        
+    }
+    
     @objc private func likeBtnTapped(_ sender: UIButton) {
         if travelInfo[sender.tag].like != nil {
             travelInfo[sender.tag].like?.toggle()
