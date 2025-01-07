@@ -11,7 +11,7 @@ import Kingfisher
 
 class MainTableViewController: UITableViewController {
 
-    @IBOutlet var mainTitle: UILabel!
+  
     
     var travelInfo = TravelInfo().travel
     
@@ -19,11 +19,13 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
-        let title = "도시 상세 정보"
-        mainTitle.text = title
-        mainTitle.textAlignment = .center
-        mainTitle.font = .boldSystemFont(ofSize: 16)
+        
+        //navigationController?.title = "도시 상세 정보"
+        navigationItem.title = "도시 상세 정보"
+     
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem = backBarButtonItem
+   
     }
 
     
@@ -67,9 +69,20 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let sb = UIStoryboard(name:"Main", bundle: nil)
-        
-        let vc = sb.instantiateViewController(withIdentifier: "DetailedInfoViewController") as! DetailedInfoViewController
+        let row = travelInfo[indexPath.row]
+        if row.ad {
+            
+        } else {
+            let sb = UIStoryboard(name:"Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "DetailedInfoViewController") as! DetailedInfoViewController
+            
+            vc.detailedInfo.title = row.title
+            vc.detailedInfo.subtitle = row.description
+            vc.detailedInfo.image = row.travel_image
+            
+            
+            navigationController?.pushViewController(vc, animated: true)
+        }
         
         
     }
