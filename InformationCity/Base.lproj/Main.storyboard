@@ -252,6 +252,9 @@
                             <constraint firstItem="LgV-WH-f2K" firstAttribute="centerY" secondItem="ntx-zQ-Eop" secondAttribute="centerY" id="L3R-3t-wKD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adLabel" destination="LgV-WH-f2K" id="AX0-WH-djI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFZ-cA-W4H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -25,7 +25,7 @@ class MainTableViewController: UITableViewController {
      
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationItem.backBarButtonItem = backBarButtonItem
-   
+        
     }
 
     
@@ -71,6 +71,17 @@ class MainTableViewController: UITableViewController {
         
         let row = travelInfo[indexPath.row]
         if row.ad {
+            let sb = UIStoryboard(name:"Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: ADViewController.identifier) as! ADViewController
+            
+            let nav = UINavigationController(rootViewController: vc)
+            
+            nav.modalPresentationStyle = .fullScreen // 모달 방식
+            
+            vc.text = row.title
+            
+            present(nav,animated: true)
+            
             
         } else {
             let sb = UIStoryboard(name:"Main", bundle: nil)
